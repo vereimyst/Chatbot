@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Manga extends Domain
 {
-	private Map <String, ArrayList <String>> mkeywords = new LinkedHashMap <String, ArrayList <String>> ();
+	private Map <String, ArrayList <String>> sdkeywords = new LinkedHashMap <String, ArrayList <String>> ();
 	private Map <String, ArrayList <String>> mresponses = new LinkedHashMap <String, ArrayList <String>> ();
 	private Map <String, ArrayList <String>> mgenres = new LinkedHashMap <String, ArrayList<String>> ();
 	private Map <String, ArrayList <String>> mnames = new LinkedHashMap <String, ArrayList <String>> ();
@@ -20,11 +20,11 @@ public class Manga extends Domain
 		sdresponse = "";
 		
 	// add categories corresponding to each ArrayList of keywords
-		mkeywords.put("m_reckw", new ArrayList <String> (Arrays.asList("recommend", "should", "give", "name")));
-		mkeywords.put("m_sumkw", new ArrayList <String> (Arrays.asList("about", "summary")));
-		mkeywords.put("m_statkw", new ArrayList <String> (Arrays.asList("how", "much", "read", "length", "complete", "completed", "translated", "long", "status")));
-		mkeywords.put("mkw_names", new ArrayList <String> (Arrays.asList("given", "yona", "law", "trash", "tcf")));
-		mkeywords.put("allm_genres", new ArrayList <String> (Arrays.asList("comedy", "drama", "romance", "school", "action", "adventure", "fantasy", "slice", "shoujo", "shounen", "bl", 
+		sdkeywords.put("m_reckw", new ArrayList <String> (Arrays.asList("recommend", "should", "give", "name")));
+		sdkeywords.put("m_sumkw", new ArrayList <String> (Arrays.asList("about", "summary")));
+		sdkeywords.put("m_statkw", new ArrayList <String> (Arrays.asList("how", "much", "read", "length", "complete", "completed", "translated", "long", "status")));
+		sdkeywords.put("mkw_names", new ArrayList <String> (Arrays.asList("given", "yona", "law", "trash", "tcf")));
+		sdkeywords.put("allm_genres", new ArrayList <String> (Arrays.asList("comedy", "drama", "romance", "school", "action", "adventure", "fantasy", "slice", "shoujo", "shounen", "bl", 
 															"yaoi", "harem", "historical", "seinen", "mystery", "supernatural", "any", "anything", "no"))); //'no' preference
 		
 		/*	 Given: comedy, drama, 		romance, 'school' life,				 'slice' of life, 		  shounen-ai,
@@ -166,7 +166,7 @@ public class Manga extends Domain
 		List <String> words = new ArrayList <String> ();
 		words = Arrays.asList(str);
 		
-		List <String> statkw = mkeywords.get("m_statkw");
+		List <String> statkw = sdkeywords.get("m_statkw");
 		
 		for (int i = 0; i < words.size(); i++)
 		{
@@ -188,7 +188,7 @@ public class Manga extends Domain
 		List <String> words = new ArrayList <String> ();
 		words = Arrays.asList(str);
 		
-		List <String> sumkw = mkeywords.get("m_sumkw");
+		List <String> sumkw = sdkeywords.get("m_sumkw");
 		
 		for (int i = 0; i < words.size(); i++)
 		{
@@ -210,7 +210,7 @@ public class Manga extends Domain
 		List <String> words = new ArrayList <String> ();
 		words = Arrays.asList(str);
 		
-		List <String> reckw = mkeywords.get("m_reckw");
+		List <String> reckw = sdkeywords.get("m_reckw");
 		
 		for (int i = 0; i < words.size(); i++)
 		{
@@ -233,7 +233,7 @@ public class Manga extends Domain
 		List <String> words = new ArrayList <String> ();
 		words = Arrays.asList(str);
 		
-		List <String> names = mkeywords.get("mkw_names");
+		List <String> names = sdkeywords.get("mkw_names");
 		
 		for (int i = 0; i < words.size(); i++)
 		{
@@ -256,7 +256,7 @@ public class Manga extends Domain
 		List <String> words = new ArrayList <String> ();
 		words = Arrays.asList(str);
 		
-		List <String> genres = mkeywords.get("allm_genres");
+		List <String> genres = sdkeywords.get("allm_genres");
 		
 		for (int i = 0; i < words.size(); i++)
 		{
@@ -278,7 +278,7 @@ public class Manga extends Domain
 		List <String> words = new ArrayList <String> ();
 		words = Arrays.asList(str);
 		
-		List <String> genres = mkeywords.get("allm_genres");
+		List <String> genres = sdkeywords.get("allm_genres");
 		String genre = "genrenotfound";
 		
 		for (int i = 0; i < words.size(); i++)
